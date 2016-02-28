@@ -10,4 +10,6 @@ public interface AvatarService {
 	
 	public Avatar getFileUpload(MultipartFile file);
 
+	public Avatar getFindById(Long id);
+
 }

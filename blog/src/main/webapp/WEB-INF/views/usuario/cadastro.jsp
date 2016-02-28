@@ -9,6 +9,8 @@
 
 </head>
 <body>
+
+	<c:import url="../menu.jsp"/>
 	<fieldset>
 		<legend>Cadastro de usuário</legend>
 	

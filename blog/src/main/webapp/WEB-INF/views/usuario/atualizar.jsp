@@ -10,6 +10,8 @@
 </head>
 <body>
 
+	<c:import url="../menu.jsp"/>
+
 	<fieldset>
 		<legend>Editar dados do usuário</legend>
 		<fieldset class="grupo">

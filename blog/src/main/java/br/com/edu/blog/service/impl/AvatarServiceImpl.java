@@ -40,4 +40,9 @@ public class AvatarServiceImpl implements AvatarService {
 		return avatar;
 	}
 
+	public Avatar getFindById(Long id) {
+		return avatarRepository.findOne(id);
+		
+	}
+
 }
