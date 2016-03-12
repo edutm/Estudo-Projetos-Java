@@ -22,7 +22,7 @@
 				<th>ação</th>
 			</tr>
 			<c:forEach var="usuario" items="${usuarios}" varStatus="i">
-				<tr bgcolor="${i.count % 2 eq 0 ? '#f1f1f1' : white}">
+				<tr bgcolor="${i.count % 2 eq 0 ? 'white' : '#f1f1f1'}">
 					<td>
 						<a href="<c:url value="/avatar/update/${usuario.avatar.id}" />" title="Editar Avatar">
 							<img alt="Avatar" src='<c:url value="/avatar/loadAvatar/${usuario.avatar.id}"/>' 
