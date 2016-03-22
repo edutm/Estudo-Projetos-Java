@@ -16,4 +16,8 @@ public interface PostagemService {
 	public List<Postagem> buscarTodos();
 
 	public void deletar(Long id);
+
+	public List<Postagem> buscarPorCategoria(String link);
+
+	public List<Postagem> buscarPorAutor(String autor);
 }

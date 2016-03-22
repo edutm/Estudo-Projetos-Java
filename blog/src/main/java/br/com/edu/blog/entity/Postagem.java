@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
 @Table(name = "postagens")
@@ -29,6 +31,7 @@ public class Postagem extends AbstractPersistable<Long>{
 	@Column(unique = true, nullable=false, length = 60)
 	private String permalink;
 	
+	@DateTimeFormat(iso=ISO.DATE_TIME, pattern="dd-MM-yyyy'T'HH:mm:ss")
 	@Column(name="data_postagem", nullable= false)
 	private LocalDateTime dataPostagem;
 	

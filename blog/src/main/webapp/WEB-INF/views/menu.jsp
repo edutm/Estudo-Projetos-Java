@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
 <fieldset>
 	<legend>Menu</legend>
+	
+	
+	<nav>
+		<a href='<c:url  value="/"/>' title="home">home</a>
+	</nav>
 	<nav>
 		<a href='<c:url value="/usuario/add"/>'>Add usuário</a>
 		<a href='<c:url value="/usuario/lista"/>'>Lista usuários</a>

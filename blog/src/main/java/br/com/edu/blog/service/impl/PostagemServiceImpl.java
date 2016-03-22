@@ -74,4 +74,12 @@ public class PostagemServiceImpl implements PostagemService {
 		
 	}
 
+	public List<Postagem> buscarPorCategoria(String link) {
+		return postagemRepository.findByCategoriasPermalink(link);
+	}
+
+	public List<Postagem> buscarPorAutor(String autor) {
+		return postagemRepository.findByAutorNome(autor);
+	}
+
 }
