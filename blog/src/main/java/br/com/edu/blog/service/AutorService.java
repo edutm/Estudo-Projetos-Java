@@ -13,4 +13,6 @@ public interface AutorService {
 	public List<Autor> buscarTodos();
 	
 	public void salvar(Autor autor);
+	
+	public void deletar(long id);
 }

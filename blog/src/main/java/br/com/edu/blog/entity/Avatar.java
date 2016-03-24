@@ -10,7 +10,9 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Entity
 @Table(name="avatares")
 public class Avatar extends AbstractPersistable<Long>{
-	
+
+	private static final long serialVersionUID = 1L;
+
 	@Column(nullable = false)
 	private String titulo;
 	

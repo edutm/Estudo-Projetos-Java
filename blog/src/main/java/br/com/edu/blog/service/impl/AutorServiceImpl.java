@@ -32,7 +32,17 @@ public class AutorServiceImpl implements AutorService {
 
 	@Transactional(readOnly=false)
 	public void salvar(Autor autor) {
-		autorRepository.save(autor);
+		
+		if(autor.getId() == null){
+			autorRepository.save(autor);
+		} else {
+			autorRepository.updateNomeEBiografia(autor.getNome(), autor.getBiografia(), autor.getId());
+		}
+	}
+
+	@Transactional(readOnly=false)
+	public void deletar(long id) {
+		autorRepository.delete(id);
 	}
 
 }
