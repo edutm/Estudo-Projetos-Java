@@ -1,0 +1,73 @@
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-03-07 19:02:11
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-03-07 19:02:23
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-03-07 19:02:27
+hint
+hint
+project --topLevelPackage br.com.devmedia.javamagazine.apacheshiro
+hint
+jpa setup --provider HIBERNATE --database DERBY_EMBEDDED 
+hint
+entity jpa --class ~.model.bean.Usuario
+hint
+field string --fieldName nome
+field string --fieldName login
+field string --fieldName senha
+hint
+help
+// [failed] field string --fieldName login --notNull 
+// [failed] entity jpa --class ~.model.bean.Role
+entity jpa --class ~.model.bean.Regra
+field string --fieldName nome
+entity jpa --class Permissao
+field string --fieldName nome
+perform clean 
+perform package
+hint
+hint fields
+focus --class ~.model.bean.Usuario
+field set --fieldName regras --type ~.model.bean.Regra
+focus --class ~.model.bean.Regra
+field set --fieldName permissoes --type ~.model.bean.Permissao
+focus --class ~.model.bean.Usuario
+field set --fieldName permissoes --type ~.model.bean.Permissao
+web jsf setup --implementation APACHE_MYFACES --library PRIMEFACES --theme ARISTO 
+web mvc setup
+perform command --mavenCommand tomcat:start
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-03-07 23:16:47
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-03-07 23:17:24
+hint web
+hint
+hint mvc
+hint web mvc
+web mvc scaffold --backingType ~.model.bean.Usuario --class ~.controller.UsuarioController
+web mvc scaffold --backingType ~.model.bean.Regra --class ~.controller.RegraController
+hint
+hint topics
+hint start
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-03-07 23:52:52
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-03-08 19:35:56
+perform command --mavenCommand jetty:run
+entity jpa --class ~.model.bean.Comentario
+field reference --type ~.model.bean.Usuario --fieldName autor
+field string --fieldName texto --sizeMin 15 --sizeMax 255
+web mvc scaffold --backingType ~.model.bean.Comentario --class ~.controller.ComentarioController
+perform package 
+perform clean 
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-03-08 22:02:16
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-03-09 12:55:14
+perform clean
+perform package
+web mvc all --package br.com.devmedia.javamagazine.apacheshiro.controller
+perform clean
+web mvc scaffold --backingType ~.model.bean.Papel --class ~.controller.PapelController
+perform clean 
+web mvc scaffold --backingType ~.model.bean.Permissao --class ~.controller.PermissaoController
+perform clean
+perform clean
+web mvc scaffold --backingType ~.model.bean.Permissao --class ~.controller.PermissaoController
+web mvc scaffold --backingType ~.model.bean.Permissao --class ~.controller.PermissaoController
+perform clean
+perform clean
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-03-09 22:22:18
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log opened at 2013-03-09 22:24:07
+// Spring Roo 1.2.2.RELEASE [rev 7d75659] log closed at 2013-03-09 22:24:35

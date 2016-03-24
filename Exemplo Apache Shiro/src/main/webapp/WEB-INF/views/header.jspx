@@ -1,0 +1,44 @@
+<div id="header" xmlns:jsp="http://java.sun.com/JSP/Page" 
+				 xmlns:fn="http://java.sun.com/jsp/jstl/functions" 
+				 xmlns:c="http://java.sun.com/jsp/jstl/core" 
+				 xmlns:spring="http://www.springframework.org/tags" 
+				 xmlns:shiro="http://shiro.apache.org/tags" version="2.0">
+  <jsp:directive.page contentType="text/html;charset=UTF-8" />
+  <jsp:output omit-xml-declaration="yes" />
+
+  <spring:url var="banner" value="/resources/images/banner-graphic.png" />
+  <spring:url var="home" value="/" />
+  <spring:message code="button_home" var="home_label" htmlEscape="false" />
+  <a href="${home}" name="${fn:escapeXml(home_label)}" title="${fn:escapeXml(home_label)}">
+    <img src="${banner}" />
+  </a>
+  
+  
+  <!-- Aqui foi inserido o novo codio -->
+  <!-- Sera testado se o usuario corrente esta logado ou lembrado
+  		esse bloco tem o comportamento de if -->
+  <shiro:user>
+  	<!-- sera renderizado uma saudação, um link para logout e para perfil e nome -->
+  	<div id="usuarioLogado">
+  		<p>
+  			Olá, ${usuarioCorrente.nome}.<br/>
+  			<a href="${home}perfil/logout">Logout</a>.<br/>
+  			<a href="${home}perfil">Perfi</a>.
+  		</p>
+  	</div>
+  </shiro:user>
+  
+  <!-- Assim como a tag acima essa tem o comportamento de if
+  	renderizando para anonimos -->
+  <shiro:guest>
+  	<!-- aqui simplismente um saudacao e link para login ou cadstro -->
+  	<div id="usuarioDeslogado">
+  		<p>
+  			Olá, anonimo.<br/>
+  			<a href="${home}perfil?formlogin">Login</a>.<br/>
+  			<a href="${home}perfil?form">Cadastrar</a>.
+  		</p>
+  	</div>
+  </shiro:guest>
+ 
+</div> 
